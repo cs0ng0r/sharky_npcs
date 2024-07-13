@@ -31,3 +31,11 @@ function DrawText3D(coords, text)
     EndTextCommandDisplayText(0, 0)
     ClearDrawOrigin()
 end
+
+AddEventHandler("onResourceStop", function(resource)
+    if resource == GetCurrentResourceName() then
+        for k, v in pairs(Config.Peds) do
+            DeleteEntity(ped)
+        end
+    end
+end)
